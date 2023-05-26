@@ -1,5 +1,5 @@
 import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material'
-import { TurnedInNot } from '@mui/icons-material';
+// import { TurnedInNot } from '@mui/icons-material';
 import { useSelector } from 'react-redux';
 import { SideBarItem } from './';
 
@@ -7,6 +7,14 @@ export const SideBar = ({ drawerWidth = 240 }) => {
 
     const { displayName } = useSelector( state => state.auth );
     const { notes } = useSelector( state => state.journal );
+
+
+    const title = 'Evidencias';
+    const body = 'Evidencias';
+    const id = 'Evidencias';
+    const date = 'Evidencias';
+    const imageUrls = 'Evidencias';
+    const evidencias = { title, body, id, date, imageUrls };
 
     return (
         <Box
@@ -27,6 +35,12 @@ export const SideBar = ({ drawerWidth = 240 }) => {
                     </Typography>
                 </Toolbar>
                 <Divider />
+
+                
+
+                <List>
+                    <SideBarItem key={ 1 } { ...evidencias } />
+                </List> 
 
                 <List>
                     {
