@@ -1,0 +1,9 @@
+
+.view-auth {
+    display: block;
+    width: 95%;
+    margin-inline: 2.5%;
+}
+.view-auth h3{
+    color: gray;
+}
