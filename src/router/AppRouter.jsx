@@ -1,9 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AuthRoutes } from '../auth/routes/AuthRoutes';
-
-import { JournalRoutes } from '../journal/routes/JournalRoutes';
-import { CheckingAuth } from '../ui/';
 import { useCheckAuth } from '../hooks';
+import { CheckingAuth } from '../views/';
+import { SmartHouseRoutes } from "../views/routes";
 
 
 export const AppRouter = () => {
@@ -19,7 +18,7 @@ export const AppRouter = () => {
 
         {
           (status === 'authenticated')
-           ? <Route path="/*" element={ <JournalRoutes /> } />
+           ? <Route path="/*" element={ <SmartHouseRoutes /> } />
            : <Route path="/auth/*" element={ <AuthRoutes /> } />
         }
 
