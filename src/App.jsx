@@ -1,10 +1,8 @@
-import { AppRouter } from './router/AppRouter';
-import { AppTheme } from './theme';
-
+import {AppRouter} from "./router/index.jsx";
+import 'animate.css';
+import './assets/css/main.css';
 export const App = () => {
-  return (
-    <AppTheme>
-        <AppRouter />
-    </AppTheme>
-  )
+    return (
+        <AppRouter/>
+    );
 }

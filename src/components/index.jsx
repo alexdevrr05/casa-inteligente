@@ -1,4 +1,3 @@
 
-
-export { NavBar } from './NavBar';
-export { ViewAuth } from './ViewAuth';
+export { InputTextField } from './InputTextField';
+export { InputTextPassword } from './InputTextPassword';
