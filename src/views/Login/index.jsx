@@ -3,6 +3,8 @@ import {GoogleOutlined, UserOutlined} from '@ant-design/icons';
 import {InputTextField, InputTextPassword} from "../../components/index.jsx";
 import {useForm} from "../../hooks/index.js";
 import {NavLink} from "react-router-dom";
+import './styles.css';
+
 const { Title } = Typography;
 
 export const Login = () => {
@@ -20,8 +22,8 @@ export const Login = () => {
     }
 
     return (
-        <main style={styles.main}>
-            <Card style={styles.containerLogin} className={'animate__animated  animate__zoomIn'}>
+        <main className={'container-main'}>
+            <Card className={'animate__animated  animate__zoomIn container-login'}>
                 <Title level={2}> Smart House </Title>
                 <Title level={4}> Iniciar sesión </Title>
 
@@ -60,21 +62,3 @@ export const Login = () => {
         </main>
     );
 }
-
-const styles = {
-    main: {
-        backgroundColor: '#F0F2F5',
-        width: '100%',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    containerLogin: {
-        marginInline: '32px',
-        width: 'calc(100% - 64px)',
-        maxWidth: '450px',
-        textAlign: 'center'
-    }
-};

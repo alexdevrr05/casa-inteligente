@@ -2,6 +2,8 @@ import {Button, Card, Space, Typography} from "antd";
 import {MailOutlined, UserOutlined} from '@ant-design/icons';
 import {InputTextField, InputTextPassword} from "../../components/index.jsx";
 import {useForm} from "../../hooks/index.js";
+import './styles.css';
+
 const { Title } = Typography;
 
 export const Register = () => {
@@ -20,8 +22,8 @@ export const Register = () => {
     }
 
     return (
-        <main style={styles.main}>
-            <Card style={styles.containerRegister} className={'animate__animated  animate__zoomIn'}>
+        <main className={'container-main'}>
+            <Card className={'animate__animated  animate__zoomIn container-register'}>
                 <Title level={2}> Smart House </Title>
                 <Title level={4}> Crear nueva cuenta </Title>
 
@@ -58,21 +60,3 @@ export const Register = () => {
         </main>
     );
 }
-
-const styles = {
-    main: {
-        backgroundColor: '#F0F2F5',
-        width: '100%',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    containerRegister: {
-        marginInline: '32px',
-        width: 'calc(100% - 64px)',
-        maxWidth: '450px',
-        textAlign: 'center'
-    }
-};
