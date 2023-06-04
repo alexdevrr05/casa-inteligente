@@ -1,8 +1,11 @@
-import {Button, Card, Space, Typography} from "antd";
-import {GoogleOutlined, UserOutlined} from '@ant-design/icons';
-import {InputTextField, InputTextPassword} from "../../components/index.jsx";
-import {useForm} from "../../hooks/index.js";
-import {NavLink} from "react-router-dom";
+import { Button, Card, Space, Typography } from "antd";
+import { GoogleOutlined, UserOutlined } from '@ant-design/icons';
+import { InputTextField, InputTextPassword } from "../../components/index.jsx";
+import { useForm } from "../../hooks/index.js";
+import { NavLink } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { startGoogleSignIn, /*startLoginWithEmailPassword */ } from '../../store/auth';
+
 const { Title } = Typography;
 
 export const Login = () => {
@@ -12,11 +15,17 @@ export const Login = () => {
         password: ''
     };
 
+    const dispatch = useDispatch();
     const [stateCurrent, handleChange] = useForm(INIT_FORM);
     const {email, password} = stateCurrent;
 
     const login = () => {
         console.log(email, password);
+    }
+
+    const onGoogleSignIn = () => {
+        console.log('onGoogleSignIn');
+        dispatch( startGoogleSignIn() );
     }
 
     return (
@@ -45,7 +54,7 @@ export const Login = () => {
                             Iniciar sesión
                         </Button>
 
-                        <Button size={'large'} icon={<GoogleOutlined />} block onClick={login}>
+                        <Button size={'large'} icon={<GoogleOutlined />} block onClick={onGoogleSignIn}>
                             Iniciar sesión con Google
                         </Button>
                     </Space>

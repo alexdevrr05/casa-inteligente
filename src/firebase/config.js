@@ -3,12 +3,13 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC9qM8LKYti4TZus0g00ISzMjudet-H2vg",
-    authDomain: "react-cursos-4368a.firebaseapp.com",
-    projectId: "react-cursos-4368a",
-    storageBucket: "react-cursos-4368a.appspot.com",
-    messagingSenderId: "35683178704",
-    appId: "1:35683178704:web:2cab2003319bbac2eba6d5"
+    apiKey: "AIzaSyBv83k9YKj4N3ut5DHrQen3qnNmedeCYjE",
+  authDomain: "react-apps-redux.firebaseapp.com",
+  projectId: "react-apps-redux",
+  storageBucket: "react-apps-redux.appspot.com",
+  messagingSenderId: "79783597510",
+  appId: "1:79783597510:web:757ceaa9f24fb2bdc4cec7",
+  measurementId: "G-21172B07YQ"
 };
 
 export const FirebaseApp = initializeApp(firebaseConfig);
