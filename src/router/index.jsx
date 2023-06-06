@@ -5,7 +5,10 @@ import {useCheckAuth} from "../hooks/index.js";
 export const AppRouter = () => {
 
     const status = useCheckAuth();
-    // console.log("🚀 ~ file: index.jsx:8 ~ AppRouter ~ status:", status)
+
+    if ( status === 'checking' ) {
+        return <h1>Loading...</h1>;
+      }
 
     return (
         <Routes>
