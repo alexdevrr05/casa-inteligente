@@ -3,8 +3,9 @@ import { GoogleOutlined, UserOutlined } from '@ant-design/icons';
 import { InputTextField, InputTextPassword } from "../../components/index.jsx";
 import { useForm } from "../../hooks/index.js";
 import { NavLink } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth';
+import { useMemo } from "react";
 
 const { Title } = Typography;
 
@@ -15,9 +16,13 @@ export const Login = () => {
         password: ''
     };
 
+
+    const { status, errorMessage } = useSelector( state => state.auth );
     const dispatch = useDispatch();
     const [stateCurrent, handleChange] = useForm(INIT_FORM);
     const {email, password} = stateCurrent;
+
+    const isAuthenticating = useMemo( () => status === 'checking', [status]);
 
     const login = () => {
         console.log(email, password);
@@ -55,7 +60,7 @@ export const Login = () => {
                             Iniciar sesión
                         </Button>
 
-                        <Button size={'large'} icon={<GoogleOutlined />} block onClick={onGoogleSignIn}>
+                        <Button size={'large'} icon={<GoogleOutlined />} block disabled={ isAuthenticating } onClick={onGoogleSignIn}>
                             Iniciar sesión con Google
                         </Button>
                     </Space>
@@ -65,6 +70,7 @@ export const Login = () => {
                             ¿No tienes una cuenta?
                         </NavLink>
                     </Space>
+                    <h2>{ errorMessage }</h2>
                 </Space>
             </Card>
         </main>
