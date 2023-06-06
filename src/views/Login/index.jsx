@@ -4,7 +4,7 @@ import { InputTextField, InputTextPassword } from "../../components/index.jsx";
 import { useForm } from "../../hooks/index.js";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { startGoogleSignIn, /*startLoginWithEmailPassword */ } from '../../store/auth';
+import { startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth';
 
 const { Title } = Typography;
 
@@ -21,6 +21,7 @@ export const Login = () => {
 
     const login = () => {
         console.log(email, password);
+        dispatch( startLoginWithEmailPassword({ email, password }) );
     }
 
     const onGoogleSignIn = () => {

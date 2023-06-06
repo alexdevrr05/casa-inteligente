@@ -2,9 +2,13 @@ import {Button, Card, Space, Typography} from "antd";
 import {MailOutlined, UserOutlined} from '@ant-design/icons';
 import {InputTextField, InputTextPassword} from "../../components/index.jsx";
 import {useForm} from "../../hooks/index.js";
+import { startCreatingUserWithEmailPassword } from "../../store/auth";
+import { useDispatch } from "react-redux";
 const { Title } = Typography;
 
 export const Register = () => {
+
+    const dispatch = useDispatch();
 
     const INIT_FORM = {
         name: '',
@@ -17,6 +21,7 @@ export const Register = () => {
 
     const register = () => {
         console.log(email, password);
+        dispatch(startCreatingUserWithEmailPassword({ email, password }));
     }
 
     return (
