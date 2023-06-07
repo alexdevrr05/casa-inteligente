@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth';
 import { useMemo } from "react";
 
-const { Title } = Typography;
+const { Text, Title } = Typography;
 
 export const Login = () => {
 
@@ -55,6 +55,8 @@ export const Login = () => {
                         Name={'password'}
                         HandleChange={handleChange}/>
 
+                    <Text type={'danger'}> {errorMessage} </Text>
+
                     <Space direction={'vertical'} size={'small'} style={{display: 'flex'}}>
                         <Button type={'primary'} size={'large'} block onClick={login}>
                             Iniciar sesión
@@ -70,7 +72,6 @@ export const Login = () => {
                             ¿No tienes una cuenta?
                         </NavLink>
                     </Space>
-                    <h2>{ errorMessage }</h2>
                 </Space>
             </Card>
         </main>

@@ -1,14 +1,21 @@
 import {Navigate, Route, Routes} from "react-router-dom";
 import {AppRoutes, AuthRoutes} from "./routes.jsx";
 import {useCheckAuth} from "../hooks/index.js";
+import {LoadingOutlined} from '@ant-design/icons';
+import Typography from "antd/es/typography/Typography.js";
 
 export const AppRouter = () => {
 
     const status = useCheckAuth();
 
     if ( status === 'checking' ) {
-        return <h1>Loading...</h1>;
-      }
+        return (
+            <>
+                <LoadingOutlined style={{fontWeight: 'bold'}}/>
+                <Typography.Text> Loading ... </Typography.Text>
+            </>
+        );
+    }
 
     return (
         <Routes>
