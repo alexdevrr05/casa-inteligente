@@ -18,28 +18,28 @@ export const MENU_NAVIGATION = [
     icon: <HomeOutlined />,
     label: 'Inicio',
     type: 'single',
-    path: '/about',
+    path: '/',
   },
   {
     key: 'monitor',
     icon: <DashboardOutlined />,
     label: 'Monitorear',
     type: 'single',
-    path: '/about',
+    path: '/monitorear',
   },
   {
     key: 'control',
     icon: <ControlOutlined />,
     label: 'Controlar',
     type: 'single',
-    path: '/about',
+    path: '/controlar',
   },
   {
     key: 'statics',
     icon: <PieChartOutlined />,
     label: 'Estadísticas',
     type: 'single',
-    path: '/about',
+    path: '/estadisticas',
   },
 
   // Maybe esto lo podemos mover fijo con la opc de cerrar sesión (SideBar.jsx)

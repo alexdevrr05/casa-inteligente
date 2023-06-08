@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Layout, theme, Typography } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
-import { SideBar } from '../../components/index';
+// import { SideBar } from '../../components/index';
 import { useSelector } from 'react-redux';
 
 const { Header, Content } = Layout;
@@ -17,7 +17,7 @@ export const HomeScreen = () => {
 
   return (
     <Layout style={styles.mainLayout}>
-      <SideBar Collapsed={collapsed} />
+      {/* <SideBar Collapsed={collapsed} /> */}
       <Layout>
         <Header style={{ ...styles.header, background: colorBgContainer }}>
           <Button
