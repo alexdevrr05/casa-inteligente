@@ -1,5 +1,6 @@
 import {Navigate, Route, Routes} from "react-router-dom";
-import {AppRoutes, AuthRoutes} from "./routes.jsx";
+import {AppRoutes} from "./appRoutes.jsx";
+import {AuthRoutes} from "./authRoutes.jsx";
 import {useCheckAuth} from "../hooks/index.js";
 import {LoadingOutlined} from '@ant-design/icons';
 import Typography from "antd/es/typography/Typography.js";
