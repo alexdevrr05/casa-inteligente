@@ -1,8 +1,9 @@
-import { Layout, Menu } from 'antd';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Layout, Menu } from 'antd';
 import { MENU_NAVIGATION } from '../../constants/menuNavigation';
 import { IssuesCloseOutlined } from '@ant-design/icons';
-import { useDispatch } from 'react-redux';
 import { startLogout } from '../../store/auth';
 
 const { Sider } = Layout;
@@ -29,3 +30,7 @@ export const SideBar = ({ Collapsed }) => {
     </Sider>
   );
 };
+
+SideBar.propTypes = {
+  Collapsed: PropTypes.bool,
+}
