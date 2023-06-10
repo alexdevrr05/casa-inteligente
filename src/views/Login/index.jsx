@@ -19,8 +19,8 @@ export const Login = () => {
 
     const { status, errorMessage } = useSelector( state => state.auth );
     const dispatch = useDispatch();
-    const [stateCurrent, handleChange] = useForm(INIT_FORM);
-    const {email, password} = stateCurrent;
+    const { formValues, handleChange } = useForm(INIT_FORM);
+    const {email, password} = formValues;
 
     const isAuthenticating = useMemo( () => status === 'checking', [status]);
 

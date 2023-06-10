@@ -16,8 +16,8 @@ export const Register = () => {
         password: ''
     };
 
-    const [stateCurrent, handleChange] = useForm(INIT_FORM);
-    const {email, password} = stateCurrent;
+    const {formValues, handleChange} = useForm(INIT_FORM);
+    const {email, password} = formValues;
 
     const register = () => {
         console.log(email, password);
