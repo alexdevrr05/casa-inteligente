@@ -4,3 +4,4 @@ export { Login } from './Login';
 export { MonitorScreen } from './Monitor';
 export { Register } from './Register';
 export { StaticsScreen } from './Statics'; 
+export { EvidenceScreen } from './Evidences';

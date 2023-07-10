@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { Button, Layout, theme, Typography } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { SideBar } from '../components';
-import { ControlScreen, HomeScreen, MonitorScreen, StaticsScreen } from '../views/index';
+import { ControlScreen, EvidenceScreen, HomeScreen, MonitorScreen, StaticsScreen } from '../views/index';
 
 const { Header, Content } = Layout;
 const { Text } = Typography;
@@ -36,6 +36,7 @@ export const AppRoutes = () => {
             <Route path={'/monitor'} element={ <MonitorScreen/> } />
             <Route path={'/control'} element={ <ControlScreen/> } />
             <Route path={'/statics'} element={ <StaticsScreen/> } />
+            <Route path={'/evidences'} element={<EvidenceScreen/>} />
 
             <Route path='/*' element={<Navigate to={'/'} />} />
           </Routes>

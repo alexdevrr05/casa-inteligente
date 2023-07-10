@@ -3,7 +3,7 @@ import {
   DashboardOutlined,
   //     AimOutlined,
   //   DeploymentUnitOutlined,
-  //   FolderOpenOutlined,
+  FolderOpenOutlined,
   //   MailOutlined,
   //   PicRightOutlined,
   //   UserAddOutlined,
@@ -40,6 +40,13 @@ export const MENU_NAVIGATION = [
     label: 'Estadísticas',
     type: 'single',
     path: '/statics',
+  },
+  {
+    key: 'evidences',
+    icon: <FolderOpenOutlined />,
+    label: 'Evidencias',
+    type: 'single',
+    path: '/evidences'
   },
 
   // Maybe esto lo podemos mover fijo con la opc de cerrar sesión (SideBar.jsx)
